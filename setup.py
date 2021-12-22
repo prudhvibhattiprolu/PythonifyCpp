@@ -12,6 +12,7 @@ with open("README.md", "r") as README:
 PowerPy = Extension(
     'PowerPy',
     sources=['src/PowerPy.cc'],
+    #library_dirs=['in case of issues regarding boost-python library, path to the directory containing that library goes here'],
     libraries=['boost_python38'],
 )
 
