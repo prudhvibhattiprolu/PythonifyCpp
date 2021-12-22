@@ -5,13 +5,13 @@ A working example of exposing C++(11) functions to Python using Boost-Python.
 
 We can use Boost-Python to expose C++ functions to Python. Apart from the direct installation, [Boost](https://www.boost.org/) can be more conveniently installed via command line using [(Mini)conda](https://docs.conda.io/en/latest/miniconda.html) by doing
 
-```
+```bash
 conda install -c conda-forge boost
 ```
 
 or using homebrew (only for **nix* systems) by doing
 
-```
+```bash
 brew install boost
 ```
 
@@ -27,9 +27,9 @@ Then, once Boost is installed in the system and is in Python's path, the Boost-P
 
 
 
-And, to build, run the following command
+Now, to build, run the following command
 
-```
+```bash
 python setup.py --quiet build_ext --inplace clean --all
 ```
 
@@ -39,7 +39,11 @@ Finally, a file of the form __*PowerPy.xxxx.so*__ should appear in the *src* dir
 
 ```python
 import src as PowerPy
+
+help(PowerPy.square)#To access docstring of the function "square"
 PowerPy.square(2)#To find square of 2
+
+help(PowerPy.cube)#To access docstring of the function "cube"
 PowerPy.cube(2)#To find cube of 2
 ```
 
